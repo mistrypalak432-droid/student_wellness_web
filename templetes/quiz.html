@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>{{ topic }} Quiz</h2>
+
+<form method="POST" action="/result/{{ topic }}">
+
+{% for question in questions %}
+    <p>{{ question }}</p>
+
+    <input type="radio" name="q{{ loop.index0 }}" value="1"> Rarely
+    <input type="radio" name="q{{ loop.index0 }}" value="2"> Sometimes
+    <input type="radio" name="q{{ loop.index0 }}" value="3"> Often
+    <input type="radio" name="q{{ loop.index0 }}" value="4"> Always
+    <br><br>
+{% endfor %}
+
+<button type="submit">Submit</button>
+
+</form>
+
+{% endblock %}

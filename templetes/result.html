@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Your Score: {{ percentage }}%</h2>
+<h3>Level: {{ level }}</h3>
+
+<h3>Recommended Exercises:</h3>
+
+<ul>
+    {% for exercise in exercises %}
+        <li>{{ exercise }}</li>
+    {% endfor %}
+</ul>
+
+<a href="/select"><button>Back</button></a>
+
+{% endblock %}
